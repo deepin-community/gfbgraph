@@ -1,0 +1,65 @@
+Source: gfbgraph
+Priority: optional
+Section: libs
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Uploaders: @GNOME_TEAM@
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-gir,
+               dh-sequence-gnome,
+               gtk-doc-tools (>= 1.14),
+               libgirepository1.0-dev (>= 1.30.0),
+               libglib2.0-dev,
+               libgoa-1.0-dev,
+               libjson-glib-dev,
+               librest-dev,
+               libsoup2.4-dev
+Standards-Version: 4.3.0
+Vcs-Browser: https://salsa.debian.org/gnome-team/gfbgraph
+Vcs-Git: https://salsa.debian.org/gnome-team/gfbgraph.git
+Homepage: https://wiki.gnome.org/Projects/GFBGraph
+
+Package: libgfbgraph-0.2-0
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: GObject library for Facebook Graph API
+ GFBGraph is a GLib/GObject wrapper for the Facebook API.
+ .
+ This package contains the actual library.
+
+Package: libgfbgraph-0.2-dev
+Section: libdevel
+Architecture: any
+Depends: libgfbgraph-0.2-0 (= ${binary:Version}),
+         libglib2.0-dev,
+         libgoa-1.0-dev,
+         libjson-glib-dev,
+         librest-dev,
+         libsoup2.4-dev,
+         gir1.2-gfbgraph-0.2 (= ${binary:Version}),
+         ${misc:Depends}
+Multi-Arch: same
+Description: GObject library for Facebook Graph API - development files
+ GFBGraph is a GLib/GObject wrapper for the Facebook API.
+ .
+ This package contains the development files.
+
+Package: libgfbgraph-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: GObject library for Facebook Graph API - documentation
+ GFBGraph is a GLib/GObject wrapper for the Facebook API.
+ .
+ This package contains the API documentation.
+
+Package: gir1.2-gfbgraph-0.2
+Section: introspection
+Architecture: any
+Depends: ${gir:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: GObject library for Facebook Graph API - GObject introspection
+ GFBGraph is a GLib/GObject wrapper for the Facebook API.
+ .
+ This package contains the GObject introspection typelib.
